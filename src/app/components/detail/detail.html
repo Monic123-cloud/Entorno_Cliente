@@ -1,0 +1,10 @@
+<div *ngIf="paciente" class="detail-card">
+  <h3>🔍 Ficha Médica Detallada</h3>
+  <hr>
+  <p><strong>Paciente:</strong> {{ paciente.name }}</p>
+  <p><strong>Email:</strong> {{ paciente.email }}</p>
+  <p><strong>Ciudad:</strong> {{ paciente.city }}</p>
+  <p><strong>Empresa/Aseguradora:</strong> {{ paciente.insurance }}</p>
+  
+  <button (click)="paciente = null" class="btn-close">Cerrar Ficha</button>
+</div>

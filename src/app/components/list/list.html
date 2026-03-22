@@ -1,0 +1,34 @@
+list.html
+<div class="card shadow-sm mt-3">
+  <div class="card-header bg-white">
+    <h3 class="mb-0 text-primary">Listado de Pacientes</h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover table-striped border">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo electrónico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of pacientes" (click)="seleccionar(p)" style="cursor: pointer;">
+          <td>{{ p.id }}</td>
+          <td>
+            <span class="badge bg-info text-dark">{{ p.name }}</span>
+          </td>
+          <td>{{ p.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!pacienteSeleccionado" class="text-center text-muted mt-3">
+      <small>Haga clic en una fila para ver el detalle del paciente.</small>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+  <app-detail [paciente]="pacienteSeleccionado"></app-detail>
+</div>

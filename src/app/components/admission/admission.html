@@ -1,0 +1,60 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0 h5">Registro de Nuevo Ingreso</h3>
+        </div>
+        
+        <div class="card-body p-4">
+          <form (ngSubmit)="enviarFormulario()">
+            
+            <div class="mb-3">
+              <label class="form-label fw-bold">Nombre del Paciente</label>
+              <input type="text" class="form-control" [(ngModel)]="nuevoPaciente.name" name="nameControl" placeholder="Escriba el nombre completo...">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold">Email de contacto</label>
+              <input type="email" class="form-control" [(ngModel)]="nuevoPaciente.email" name="emailControl" placeholder="correo@ejemplo.com">
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Ciudad</label>
+                <input type="text" class="form-control" [(ngModel)]="nuevoPaciente.city" name="cityControl">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Aseguradora</label>
+                <input type="text" class="form-control" [(ngModel)]="nuevoPaciente.insurance" name="insuControl">
+              </div>
+            </div>
+
+            <div class="d-grid mt-3">
+              <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+                Confirmar e Ingresar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card border-info bg-light mt-4 shadow-sm" *ngIf="nuevoPaciente.name">
+        <div class="card-body">
+          <p class="text-info small fw-bold mb-1">VISTA PREVIA DEL REGISTRO:</p>
+          <h4 class="text-dark mb-1">Paciente: {{ nuevoPaciente.name }}</h4>
+          <div class="mt-2">
+            <span class="badge bg-success me-2" *ngIf="nuevoPaciente.insurance">
+              {{ nuevoPaciente.insurance }}
+            </span>
+            <span class="text-muted small" *ngIf="nuevoPaciente.city">
+              Ciudad: {{ nuevoPaciente.city }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

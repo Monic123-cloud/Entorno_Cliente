@@ -1,0 +1,22 @@
+.detail-card {
+  background-color: #f8f9fa;
+  border-left: 5px solid #0dcaf0; /* Color cyan de Bootstrap */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.btn-close {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-close:hover {
+  background-color: #cc0000;
+}
